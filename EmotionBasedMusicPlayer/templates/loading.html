@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Test</title>
+
+</head>
+
+<body>
+    {% comment %} {{ label }} {% endcomment %}
+    {% if label == 'Angry' %}
+    <script>
+        setTimeout(function() {
+            window.location.href = "https://open.spotify.com/playlist/37i9dQZF1DX3ND264N08pv";
+        }, 3000);
+    </script>
+    Angry
+    {% endif %}
+    {% if label == "Sad" %}
+    <script>
+        setTimeout(function() {
+            window.location.href = "https://open.spotify.com/playlist/5I9As02pKBVN1kONkCX71l";
+        }, 3000);
+    </script>
+    Sad
+    {% endif %}
+    {% if label == "Happy" %}
+    <script>
+        setTimeout(function() {
+            window.location.href = "https://open.spotify.com/playlist/6pfOWoznf6TlqELmkVUuJ1";
+        }, 3000);
+    </script>
+    Happy
+    {% endif %}
+    {% if label == "Surprise" %}
+    <script>
+        setTimeout(function() {
+            window.location.href = "https://open.spotify.com/playlist/37i9dQZF1DX9XIFQuFvzM4";
+        }, 3000);
+    </script>
+    Surprise
+    {% endif %}
+    {% if label == "Neutral" %}
+    <script>
+        setTimeout(function() {
+            window.location.href = "https://open.spotify.com/playlist/0dsl5hbFdVT7scb7Vakkwa";
+        }, 3000);
+    </script>
+    Neurtral
+    {% endif %}
+    
+
+    
+</body>
+
+
+</html>

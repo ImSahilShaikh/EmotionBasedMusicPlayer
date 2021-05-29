@@ -21,7 +21,6 @@ def runApp(request):
     global val
     mypath = os.path.join(os.getcwd(),'EMP','input_data')
 
-    
     def CaptureImages():
         global val
         cam = cv2.VideoCapture(0)
@@ -41,8 +40,8 @@ def runApp(request):
 
     getimage = os.listdir(os.path.join(mypath,'cam_images/'))
     print(getimage)
-    image = cv2.imread(os.path.join(os.path.join(mypath,'cam_images/'),getimage[0]))
-    #image = cv2.imread(os.path.join(os.path.join(mypath,'images/'),"angry.jpg"))
+    #image = cv2.imread(os.path.join(os.path.join(mypath,'cam_images/'),getimage[0]))
+    image = cv2.imread(os.path.join(os.path.join(mypath,'images/'),"angry.jpg"))
 
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     faces = []
@@ -51,7 +50,7 @@ def runApp(request):
     print(faces)
 
     if( len(faces)==0):
-        return render(request,"test.html")
+        return render(request,"error.html")
 
     for (x, y, w, h) in faces:
         cv2.rectangle(image, (x, y), (x+w, y+h), (255, 0, 0), 2)
@@ -71,26 +70,13 @@ def runApp(request):
     label_position = (x+20, y-20)
     cv2.putText(image, label, label_position,cv2.FONT_HERSHEY_SIMPLEX, 1, (255, 0, 0), 2)
 
-    cv2.imshow("Emotion Detector", image)
+    #cv2.imshow("Emotion Detector", image)
+    #cv2.waitKey(0)
 
-    cv2.waitKey(0)
+    #CHECK THIS
+    # for f in os.path.join(mypath,'cam_images/'):
+    #     os.remove(os.path.join(mypath,'cam_images/',f))
 
-    print(label)
-    if(label == 'Happy'):
-        return redirect('https://open.spotify.com/playlist/6pfOWoznf6TlqELmkVUuJ1')
-    
-    if(label == 'Sad'):
-        return redirect('https://open.spotify.com/playlist/5I9As02pKBVN1kONkCX71l')
-    
-    if(label == 'Angry'):
-        return redirect('https://open.spotify.com/playlist/37i9dQZF1DX3ND264N08pv')
-
-    if(label == 'Neutral'):
-        return redirect('https://open.spotify.com/playlist/0dsl5hbFdVT7scb7Vakkwa')
-    
-    if(label == 'Surprise'):
-        return redirect('https://open.spotify.com/playlist/37i9dQZF1DX9XIFQuFvzM4')
-
-    return render(request,"test.html")
+    return render(request,"loading.html",{'label':label})
 
 
