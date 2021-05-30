@@ -41,7 +41,7 @@ def runApp(request):
     getimage = os.listdir(os.path.join(mypath,'cam_images/'))
     print(getimage)
     #image = cv2.imread(os.path.join(os.path.join(mypath,'cam_images/'),getimage[0]))
-    image = cv2.imread(os.path.join(os.path.join(mypath,'images/'),"angry.jpg"))
+    image = cv2.imread(os.path.join(os.path.join(mypath,'images/'),"happy1.jpg"))
 
     gray = cv2.cvtColor(image, cv2.COLOR_BGR2GRAY)
     faces = []

@@ -119,7 +119,7 @@
 
       <nav class="nav-menu d-none d-lg-block">
         <ul>
-          <li class="active"><a href="index.html">Home</a></li>
+          <li class="active"><a href="/">Home</a></li>
           <li><a href="#emotion">Emotions</a></li>
           <li><a href="#team">About</a></li>
           <li><a href="#contact">Contact</a></li>
@@ -159,7 +159,7 @@
 
 
   </section><!-- End Hero -->
-
+{% comment %} 
   <main id="main">
 
    <section id="emotion" class="emotion" >
@@ -176,16 +176,17 @@
         <div class="section-title">
           <h2>Team</h2>
           
-        </div>
+        </div> {% endcomment %}
 
-        <div class="row">
+        {% comment %} <div class="row">
 
       
 
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member">
               <div class="member-img">
-                <img src="assets/img/team/manas.jpg" class="img-fluid" alt="">
+              
+                <img src="{% static 'assets/img/team/manas.jpg' %}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
                   <a href=""><i class="icofont-facebook"></i></a>
@@ -202,7 +203,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member">
               <div class="member-img">
-                <img src="assets/img/team/manas.jpg" class="img-fluid" alt="">
+                <img src="{% static 'assets/img/team/manas.jpg' %}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
                   <a href=""><i class="icofont-facebook"></i></a>
@@ -219,7 +220,7 @@
           <div class="col-lg-3 col-md-6 d-flex align-items-stretch">
             <div class="member">
               <div class="member-img">
-                <img src="assets/img/team/prachi.jpg" class="img-fluid" alt="">
+                <img src="{% static 'assets/img/team/prachi.jpg' %}" class="img-fluid" alt="">
                 <div class="social">
                   <a href=""><i class="icofont-twitter"></i></a>
                   <a href=""><i class="icofont-facebook"></i></a>
@@ -362,7 +363,7 @@ function showSlides() {
   slides[slideIndex-1].style.display = "block";
   setTimeout(showSlides, 2000); // Change image every 2 seconds
 }
- </script>
+ </script> {% endcomment %}
 </body>
 
 </html>
